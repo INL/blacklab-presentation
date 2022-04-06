@@ -215,6 +215,8 @@ div.box {
   background-color: var(--content-area-color);
   padding: 1em 1em 2em 2em;
   /*border-right: 3px solid white;*/
+
+  z-index: 10000;
 }
 
 /* Standard image: float to the right, below the logo; */
@@ -286,6 +288,7 @@ div.box {
   background-image: url(images/logo-ivdnt-3.png);
   background-size: 40%;
   background-position: 0% 0%;
+  z-index: 0;
 }
 .title .remark-slide-number {
   display: none;

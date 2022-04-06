@@ -14,6 +14,15 @@
         sourceUrl: 'blacklab.md',
         countIncrementalSlides: false
       });
+
+      // Open external links in new tab
+      window.setTimeout( () => {
+        document.querySelectorAll("a").forEach(l => {
+          if (l.href && l.href.startsWith('http') && !l.target) {
+            l.target = '_blank';
+          }
+        });
+      }, 100);
     </script>
   </body>
 </html>

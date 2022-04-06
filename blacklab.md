@@ -475,8 +475,8 @@ class: image, nologo
 .center[![Inquisitive dog](images/questions.jpg)]
 .bottomright[
 <table>
-<tr><th>Website</th><td><a target='_blank' href='https://bit.ly/blacklab-docs'>bit.ly/blacklab-docs</a></td></tr>
-<tr><th>Presentation</th><td><a target='_blank' href='https://bit.ly/blacklab-pres'>bit.ly/blacklab-pres</a></td></tr>
+<tr><th>Website</th><td><a href='https://bit.ly/blacklab-docs'>bit.ly/blacklab-docs</a></td></tr>
+<tr><th>Presentation</th><td><a href='https://bit.ly/blacklab-pres'>bit.ly/blacklab-pres</a></td></tr>
 <tr><th>Code</th><td>github.com/INL/BlackLab</td></tr>
 <tr><th>Mail</th><td>jan.niestadt@ivdnt.org</td></tr>
 </table>
