@@ -1,0 +1,346 @@
+/* ================================================================
+                        Import Google fonts
+   ================================================================ */
+
+@import url(http://fonts.googleapis.com/css?family=Nunito:400,700);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+/* ================================================================
+                         Basic HTML element styling
+   ================================================================ */
+
+@font-face {
+   font-family:'schoolboek';
+   src: url('fonts/schoolboek/Schoolboek-Regular.eot');
+   src: url('fonts/schoolboek/Schoolboek-Regular.eot?#iefix') format('embedded-opentype'),
+     url('fonts/schoolboek/Schoolboek-Regular.woff') format('woff'),
+     url('fonts/schoolboek/Schoolboek-Regular.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-stretch: normal;
+}
+
+body {
+  font-family: 'Times New Roman', Georgia, Serif;
+
+  --title-slide-color: #1fbed3;
+  --header-area-color: #ffffff;
+  --content-area-color: #ffffff;
+  --footer-color: #1fbed3;
+  --header-height: 15%;
+  --footer-height: 7%;
+}
+
+/* Headings styles. 'schoolboek' is INT official font;
+   the others are similar fallbacks for when that's not available. */
+h1, h2, h3 {
+  font-family: 'schoolboek', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  margin: 0.5em 0 0 0;
+  padding: 0;
+}
+
+/* Headings sizes, different from Remark's defaults. */
+.remark-slide-content h1 {
+  font-size: 34pt;
+}
+.remark-slide-content h2 {
+  font-size: 28pt;
+  font-style: italic;
+}
+.remark-slide-content h3 {
+  font-size: 20pt;
+}
+
+p {
+  margin: 0.5em 0 0;
+}
+
+/* Simple list with some space between items. */
+ul, ol {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+ul {
+  list-style-type: disc;
+}
+
+/* Second level list: circle */
+ul ul {
+  list-style-type: circle;
+}
+li {
+  margin-bottom: 0.5em;
+}
+
+
+/* Simple table with no borders */
+table {
+  border-collapse: collapse;
+}
+td, th {
+  text-align: left;
+  padding: 5px;
+}
+table.stack {
+  width: 50%;
+  margin: 0 auto;
+}
+table.stack td, table.border th {
+  border: 1px solid black;
+}
+
+blockquote {
+  margin: 0.5em 0.6em 0.5em 0.6em;
+}
+
+
+/* ================================================================
+                         Basic slide styling
+   ================================================================ */
+
+/* Adjust slide padding, font size */
+.remark-slide-content {
+  padding: 0.5em 2em 0.5em 2em;
+  font-size: 24pt;
+}
+
+pre {
+  margin-top: 0;
+}
+
+.remark-code {
+  font-size: 50%;
+}
+
+.remark-inline-code {
+  font-size: 80%;
+  font-weight: bold;
+}
+
+.small .remark-code {
+  font-size: 35%;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+/* Code examples */
+.remark-code, .remark-inline-code {
+  font-family: "Ubuntu Mono", "Lucida Console", monospace;
+}
+
+/* Slide number with line to the left */
+.remark-slide-number {
+  z-index: 20;
+  opacity: 1;
+  font-size: 50%;
+  width: 10%;
+  text-align: right;
+}
+.nologo .remark-slide-number {
+  display: none;
+}
+.remark-slide-number:before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  right: 120%;
+  width: 1px;
+  height: 200%;
+  border-left: 1px solid black;
+  z-index: 20;
+}
+.nologo .remark-slide-number:before {
+  content: none;
+}
+
+/* Slide background */
+.remark-slide {
+  color: black;
+  background-color: var(--header-area-color);
+}
+
+/* Colored square and logo in footer (add "nologo" class to turn it off) */
+.remark-slide-content:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--footer-height);
+  /*background-color: var(--footer-color);*/
+  border-top: 1px solid black;
+  z-index: 10;
+  background-image: url(images/logo-ivdnt-1.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: 8% 60%
+}
+/* Colored square in footer (add "nologo" class to turn it off) */
+.remark-slide-content:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(var(--footer-height) * 0.7);
+  height: var(--footer-height);
+  background-color: var(--footer-color);
+  border-top: 1px solid black;
+  z-index: 10;
+}
+.remark-slide-content.nologo:after {
+  content: none;
+}
+.remark-slide-content.nologo:before {
+  content: none;
+}
+
+/* Put .box[ ... ] around your slide content (possibly multiple lines)
+   to contain it in a blue-gray box. */
+div.box {
+  position: absolute;
+  top: var(--header-height);
+  bottom: var(--footer-height);
+  left: 0;
+  right: 0;
+
+  color: black;
+  background-color: var(--content-area-color);
+  padding: 1em 1em 2em 2em;
+  /*border-right: 3px solid white;*/
+}
+
+/* Standard image: float to the right, below the logo; */
+.remark-slide-content img {
+  float: right;
+  margin-top: 1em;
+}
+
+
+/* ================================================================
+                         Custom slide classes
+   ================================================================ */
+
+.remark-slide-content.chaptertitle h1 {
+  margin-top: 4em;
+}
+.remark-slide-content.chaptertitle h1,
+.remark-slide-content.chaptertitle h2,
+.remark-slide-content.chaptertitle h3 {
+  text-align: center;
+}
+
+.remark-slide-content.dark {
+  background-color: black;
+  color: #ddd;
+}
+
+/* Class "title": reposition headings; */
+.remark-slide-content.title {
+}
+.remark-slide-content.title h1 {
+  width: 100%;
+  font-size: 60pt;
+  margin-top: 0.2em;
+}
+.remark-slide-content.title h2 {
+  width: 100%;
+  font-size: 32pt;
+  margin-top: 0.1em;
+}
+.remark-slide-content.title p {
+  position: absolute;
+  font-size: 20pt;
+  bottom: 0;
+  right: 0;
+  width: 45%;
+  height: 35%;
+  padding-left: 5%;
+  border-left: 1px solid black;
+}
+.title .box {
+  position: absolute;
+  top: 35%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--title-slide-color);
+}
+.remark-slide-content.title:before {
+  content: none;
+}
+.remark-slide-content.title:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(images/logo-ivdnt-3.png);
+  background-size: 40%;
+  background-position: 0% 0%;
+}
+.title .remark-slide-number {
+  display: none;
+}
+
+/* Class "image": full-size image slide, no line on the left */
+.remark-slide-content.image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+}
+.remark-slide-content.image img {
+  float: none;
+  margin-top: 0;
+  width: 100%;
+}
+.remark-slide-content.image h1 {
+  margin: 0.5em 0 0 0.5em;
+}
+.remark-slide-content.image p {
+  margin: 0;
+}
+.remark-slide-content.image:before {
+  content: none;
+}
+
+/* Class "boxlist": a list inside a blue-gray box */
+.remark-slide-content.boxlist > ul, .remark-slide-content.boxlist > ol {
+  position: absolute;
+  top: var(--header-height);
+  bottom: var(--footer-height);
+  left: 0;
+  right: 0;
+  padding: 0.5em 1em 0.5em 3em;
+}
+
+.bottomright {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10;
+  color: white;
+  text-shadow: black 1px 1px;
+}
+
+.cql-examples table td {
+  padding: 0 1em 0.5em 0;
+}
+.cql-examples table td:nth-child(1) {
+  width: 34%;
+}
+.cql-examples table td:nth-child(2) {
+  font-family: monospace;
+  font-size: 90%;
+}
