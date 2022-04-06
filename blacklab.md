@@ -12,9 +12,6 @@ BlackLab developer
 # What is it for?
 <u>Searching</u> and <u>analyzing</u> <u>large collections</u> of <u>annotated</u>, <u>structured</u> text
 
-???
-BlackLab is a way to search and analyze corpora (large collections of text). We can use it to quickly "sniff out" word patterns we're looking for in large text collections.
-
 ---
 
 # What is it for? Let's unpack that...
@@ -43,8 +40,6 @@ BlackLab is a way to search and analyze corpora (large collections of text). We 
 - don't reinvent the wheel (e.g. Lucene)
 - welcoming to users and contributors
 
-???
-
 ---
 
 # Who uses it?
@@ -58,9 +53,6 @@ BlackLab is a way to search and analyze corpora (large collections of text). We 
 - And more: [VIVA Korpusportaal](https://viva-afrikaans.org/portale/produkte-korpus/access-to-korpusportaal); [SADiLaR corpus portal](https://corpus.sadilar.org/corpusportal/search/simple); [Arabic Digital Humanities](http://arabic-dh.hum.uu.nl/corpus-frontend/about); [Fryske Akademy](https://www.fryske-akademy.nl/); [Alpheios Latin texts](https://blacklab.alpheios.net/latin-texts/search); [Spoken Hindi](http://www.cosh.site/)
 
 
-???
-
-
 ---
 # Can it handle my input data?
 
@@ -72,11 +64,10 @@ Probably yes:
 - supports text direction (LTR/RTL)
 
 ???
-An important question you might be asking is: can BlackLab handle my data format? The likely answer is YES. It supports a number of common formats out of the box, and we've recently made it much easier to add support for new formats. If you have data in a format that's not supported yet, be it an XML format or a comma-separated or tab-separated file, you can write a simple configuration file to add support for your format. There's documentation on how to do this, and if you have any trouble, we'll be happy to work with you to get it sorted out.
+
+An important question you might be asking is: can BlackLab handle my data format? The likely answer is yes. It supports a number of common formats out of the box, and we've recently made it much easier to add support for new formats. If you have data in a format that's not supported yet, be it an XML format or a comma-separated or tab-separated file, you can write a simple configuration file to add support for your format. There's documentation on how to do this, and if you have any trouble, we'll be happy to work with you to get it sorted out.
 
 It's also nice to know that BlackLab has no problem with special characters or different scripts; it supports all of Unicode. I've seen it used with Chechen, Chinese and Hindi corpora.
-
-Okay, so I've briefly shown how we can search and how flexible it is with regards to input data. But maybe you're wondering: how do I actually use it?
 
 ---
 # What can we search for?
@@ -106,9 +97,6 @@ Okay, so I've briefly shown how we can search and how flexible it is with regard
 class: chaptertitle
 # Web application (BlackLab Frontend)
 
-???
-So let's dive in and see everything that Frontend has to offer.
-
 ---
 # Web application (BlackLab Frontend)
 
@@ -120,7 +108,7 @@ So let's dive in and see everything that Frontend has to offer.
 - Upload and index your own corpora
 
 ???
-Finally, let's see what Frontend is all about. It's a web-based corpus search application, the same one we use at the INT for publishing our corpora, such as the Modern Dutch Corpus.
+Let's see what Frontend is all about. It's a web-based corpus search application, the same one we use at the INT for publishing our corpora, such as the Modern Dutch Corpus.
 
 It features three 'difficulty levels' of search interface, so users can work with it no matter their experience. It allows filtering on metadata so you can search the part of the corpus you're interested in. It allows grouping and sorting on various properties, including contextual ones such as the text matched, or the word to the left of the match.
 
@@ -131,8 +119,6 @@ Fairly recently, we've added the ability to upload and index your own corpora. A
 class: image, nologo
 # Simple search
 ![Frontend screenshot](images/frontend-simple-search.png)
-
-???
 
 ---
 
@@ -272,9 +258,11 @@ class: image, nologo
 
 ???
 
-Like I said before, a recent addition is the ability for users to upload their own data to search. This is the easiest way to try setting up a small corpus with BlackLab.
+Like I said before, it is possible for users to upload their own data to search. This is the easiest way to try setting up a small corpus with BlackLab.
 
-Right now we have a limited version of this available that can handle FoLiA and TEI, but we're working on a much improved version that not only can handle almost any format you throw at it; it should actually be possible to upload plain text or Word documents and have them tagged automatically and made searchable.
+You can upload one of the supported formats or define your own in the web application.
+
+It should also be possible to upload plain text or Word documents and have them tagged automatically and made searchable.
 
 ---
 
@@ -283,7 +271,7 @@ class: image, nologo
 ![Frontend screenshot](images/as02-formats.png)
 
 ???
-Here's the list of formats we will support out-of-the-box, and this list will probably grow.
+Here's the list of formats we support out-of-the-box.
 
 ---
 
@@ -292,14 +280,11 @@ class: image, nologo
 ![Frontend screenshot](images/as03-custom-format.png)
 
 ???
-And here's a very early version of the interface to create your own custom format configuration. We're working on a friendlier, more visual interface for this as well.
+And here's the interface to create your own custom format configuration. This will require checking the documentation of course, but you can use the builtin formats as a starting point if you want.
 
 ---
 class: chaptertitle
 # Multiple ways to use BlackLab
-
-???
-
 
 ---
 # Multiple ways to use BlackLab
