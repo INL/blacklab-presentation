@@ -260,7 +260,7 @@ div.box {
 .remark-slide-content.title p {
   position: absolute;
   font-size: 20pt;
-  bottom: 0;
+  bottom: 1em;
   right: 0;
   width: 45%;
   height: 35%;
@@ -346,4 +346,9 @@ div.box {
 .cql-examples table td:nth-child(2) {
   font-family: monospace;
   font-size: 90%;
+}
+
+small {
+  font-size: 80%;
+  font-style: italic;
 }

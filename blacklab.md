@@ -3,7 +3,8 @@ class: title
 
 # Corpus search with BlackLab
 
-**[bit.ly/blacklab-pres](https://inl.github.io/blacklab-presentation/)**<br><br>
+**[bit.ly/blacklab-pres](https://inl.github.io/blacklab-presentation/)**<br>
+**[github.com/INL/BlackLab](https://github.com/INL/BlackLab)**<br><br>
 Jan Niestadt<br>
 BlackLab developer
 ]
@@ -83,15 +84,26 @@ It's also nice to know that BlackLab has no problem with special characters or d
 ---
 # What can we do with the results?
 
-- view as a list of matches (Key Word In Context, KWIC)
-- view per document, with snippets (similar to Google results)
+- view list of matches (Key Word In Context, KWIC)
+- random sample of matches
+- view per document, with snippets (more like Google results)
 - sort or group by document metadata
-- sort or group matches by context (e.g. 2nd word in match; lemma left of match)
-- capture parts of matches (e.g. find noun phrases and capture adjective(s) and noun separately)
-- frequency lists (e.g. group whole corpus or subcorpus to find word frequencies per year)
+- sort or group matches by context words<br>
+  <small>(e.g. sort by lemma before match; or group by second word in match)</small>
+- capture parts of matches<br>
+  <small>(e.g. find noun phrases, capturing adjectives and nouns separately)</small>
+- word frequencies (whole corpus / per year / per medium, etc.)
 
 *(examples coming up)*
 
+---
+# How does it work?
+
+Put simply, BlackLab is powered by:
+
+- Lucene's <i>reverse index</i> (like the index at the back of a book)
+- Its own <i>forward index</i> (to quickly find a word at a specific position)
+- A collection of custom `Query` classes to search for repetitions, XML tags, etc.
 
 ---
 class: chaptertitle
@@ -164,19 +176,12 @@ And here you can see the full document content. This feature is only available i
 ---
 
 class: image, nologo
-# Concordances (KWIC view)
-![Frontend screenshot](images/as08-concordanties.png)
-
-???
-If we go back to our KWIC view, you can see there's many different forms of the word 'lief': inflections and spelling variations. What if we want to know how often each occurs?
-
----
-
-class: image, nologo
 # Group by matched word
 ![Frontend screenshot](images/as10-group-hits.png)
 
 ???
+If we go back to our KWIC view, you can see there's many different forms of the word 'lief': inflections and spelling variations. What if we want to know how often each occurs?
+
 Well, we can group the result set by words matched and we will get a frequency list like this that shows us what are the more common and less common variants. We can even click on individual bars to see the group of matches it represents.
 
 ---
@@ -219,7 +224,7 @@ Finally, for people like me, who prefer to type in Corpus Query Language directl
 | sequence of words        | "dog" "is" "happy" |
 | wildcard                 | "dog" [] "hungry"  |
 | match by annotation(s)   | "good" [lemma="dog" &amp; pos="noun"] |
-| parts of words           | [lemma=".*dog"] |
+| parts of words           | [lemma="dog.*"] |
 | optional parts           | "dog" "is" "very"? "large" |
 ]
 
@@ -290,9 +295,9 @@ class: chaptertitle
 # Multiple ways to use BlackLab
 
 - **Web application (BlackLab Frontend)**<br/>
-  publish your corpus or allow users to upload their own
+  publish some corpora or allow users to upload their own
 - **Webservice (BlackLab Server)**<br/>
-  easily use it from your favourite language
+  accessible from any programming language
 - **Java library**<br/>
   power mere mortals were not meant to meddle with
 
@@ -389,16 +394,12 @@ Full document (if allowed):
 With highlighting:
 >`/bls/zeebrieven/docs/12345/contents?patt=[lemma="schip"]`
 
+For more: see [documentation](https://inl.github.io/BlackLab/blacklab-server-overview.html) and [example scripts](https://inl.github.io/BlackLab/blacklab-server-different-languages.html).
+
 ???
 Here's how you would fetch a specific document's metadata and contents. Note that contents can only be retrieved if allowed by the corpus metadata.
 
 The third example shows how you can highlight a pattern in the full contents.
-
----
-
-# More about BlackLab Server
-
-For more: see [documentation](https://inl.github.io/BlackLab/blacklab-server-overview.html) and [example scripts](https://inl.github.io/BlackLab/blacklab-server-different-languages.html).
 
 ---
 class: chaptertitle
@@ -416,7 +417,7 @@ Improvements in the last \~2 years:
 - now scales to over 2 billion tokens
 - better testing
 - faster frequency lists (e.g. word frequencies per year)
-- upgraded to recent lucene version (faster, less memory)
+- upgraded to recent Lucene version
 - experimental Docker version
 - many small bugfixes
 
@@ -427,7 +428,7 @@ Improvements in the last \~2 years:
 
 - Integration with Solr
   - scaling to larger corpora (distributed search)
-  - huge number of Solr plugins available, for e.g. statistics
+  - many Solr plugins available, for e.g. statistics
   - less code to maintain
 
 - Searching for syntactic/semantic relations (treebanks)
